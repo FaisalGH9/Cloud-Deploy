@@ -50,3 +50,4 @@ for dir_path in [VECTOR_DIR, CACHE_DIR, MEDIA_DIR]:
 
 DEMO_MODE = os.getenv("DEMO_MODE", "false").lower() == "true"
 print("[DEBUG] Loaded index name:", PINECONE_INDEX_NAME)
+

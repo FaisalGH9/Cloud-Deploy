@@ -19,6 +19,13 @@ from config.settings import (
     LONG_VIDEO_THRESHOLD
 )
 
+# Load proxy URL from environment
+PROXY_URL = os.getenv("PROXY_URL")
+PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
+if PROXY_URL:
+    os.environ["HTTP_PROXY"] = PROXY_URL
+    os.environ["HTTPS_PROXY"] = PROXY_URL
+
 # === Cookies setup ===
 COOKIES_FILE = r"C:\Users\HUAWEI\Desktop\cookies.txt"
 

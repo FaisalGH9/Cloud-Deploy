@@ -23,11 +23,11 @@ COPY . .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Create storage folders if not exist
+# Create storage folders (optional, if used in code)
 RUN mkdir -p storage/cache storage/media storage/vectors
 
-# Expose Streamlit port
-EXPOSE 8501
+# Expose Streamlit default port
+EXPOSE 8080
 
-# Start the app
-CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# Run Streamlit app on correct port and external address
+CMD ["streamlit", "run", "main.py", "--server.port=8080", "--server.address=0.0.0.0"]
